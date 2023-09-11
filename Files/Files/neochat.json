@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "085c82d6-60d1-47d4-945e-eec0663e6ece",
+		"name": "neochat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23088325"
+	},
+	"item": [
+		{
+			"name": "get all inbox",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/inbox?userId=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"inbox"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This API retrieves all the user inbox messages based on their userId"
+			},
+			"response": [
+				{
+					"name": "get all inbox",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/inbox?userId=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"inbox"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "237"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"inboxId\": 1,\n        \"userId\": 1,\n        \"friendId\": 2,\n        \"userName\": \"Mohan\",\n        \"friendName\": \"Rohan\"\n    },\n    {\n        \"inboxId\": 2,\n        \"userId\": 1,\n        \"friendId\": 3,\n        \"userName\": \"Mohan\",\n        \"friendName\": \"Sohan\"\n    },\n    {\n        \"inboxId\": 3,\n        \"userId\": 1,\n        \"friendId\": 6,\n        \"userName\": \"Mohan\",\n        \"friendName\": \"Udkarsh\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get all user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"users"
+					]
+				},
+				"description": "Currently In contacts page all the user will be shown using this api, but later on logic will be changed like whatsapp"
+			},
+			"response": [
+				{
+					"name": "get all user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "1232"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"userId\": 7,\n        \"name\": \"John Doe\",\n        \"mobileNo\": \"1234567891\",\n        \"password\": \"a6685009158873df2173bda293e846cbaffbe389c93935577702eb9362850f12\",\n        \"salt\": \"a9e8dd614c96f793e1804f0fd9524c14474f9328c54bb8ccebe34321a1b5f996\"\n    },\n    {\n        \"userId\": 1,\n        \"name\": \"Mohan\",\n        \"mobileNo\": \"1234567896\",\n        \"password\": \"38c037431bfd7cf880e8c1b24d3e8ec3f0b2d9cc9af763199cd9c0d452f0a5d2\",\n        \"salt\": \"6b375b84176ae192ff8e53923438539b25b2e75a977bf7380db844a1eb2931ea\"\n    },\n    {\n        \"userId\": 2,\n        \"name\": \"Rohan\",\n        \"mobileNo\": \"1234567895\",\n        \"password\": \"80a1efb8e5542d9a79c2bd21f96e9e1a2b6f343695b02bb5f063821f101f51ff\",\n        \"salt\": \"9550261ea89dc0820309633e13760e5f907980b7b02a6f1e21a2f15b7fb2db22\"\n    },\n    {\n        \"userId\": 3,\n        \"name\": \"Sohan\",\n        \"mobileNo\": \"1234567894\",\n        \"password\": \"3b54e8ff5a3983b7406e65837e749553581e34fb9f3eaea32026d4bf548c53f0\",\n        \"salt\": \"4724d48f7e617cfc90f7df35db4bb414ce1a63a493101813b739d65e3da3024a\"\n    },\n    {\n        \"userId\": 5,\n        \"name\": \"Shubham\",\n        \"mobileNo\": \"1234567893\",\n        \"password\": \"1fcc3a45b0361c9e9f3b288766db47710e4888560e937801dca3409850d7cfc6\",\n        \"salt\": \"fccacf631fd9c7a9d6a5bb74d968631dbf411313ce3b3af619c673f0d968d537\"\n    },\n    {\n        \"userId\": 6,\n        \"name\": \"Udkarsh\",\n        \"mobileNo\": \"1234567892\",\n        \"password\": \"cae7086987910cd71a20a66bfbbb5d239530a7f1daa058910d08ea59c9fb9014\",\n        \"salt\": \"3204ef16c0c330af018c119333189b85b2bd78ff1c68891d36b66eef92ff2363\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get all messages",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/message?inboxId=1&pageNo=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"message"
+					],
+					"query": [
+						{
+							"key": "inboxId",
+							"value": "1"
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This api is for getting paginated messages using the inboxId(convesation Id) and page number"
+			},
+			"response": [
+				{
+					"name": "get all messages",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/message?inboxId=1&pageNo=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"message"
+							],
+							"query": [
+								{
+									"key": "inboxId",
+									"value": "1"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "695"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi mohan1\",\n        \"senderId\": 2,\n        \"sentAt\": 1693759627042\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi mohan2\",\n        \"senderId\": 2,\n        \"sentAt\": 1693759715290\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 1\",\n        \"senderId\": 1,\n        \"sentAt\": 1693763225355\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 2\",\n        \"senderId\": 1,\n        \"sentAt\": 1693763235548\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 3\",\n        \"senderId\": 1,\n        \"sentAt\": 1693811839579\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi mohan2\",\n        \"senderId\": 2,\n        \"sentAt\": 1693813207795\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"Hi rohan\",\n        \"senderId\": 1,\n        \"sentAt\": 1693813282061\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 2\",\n        \"senderId\": 1,\n        \"sentAt\": 1693815415926\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"h rohan 3\",\n        \"senderId\": 1,\n        \"sentAt\": 1693817263807\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 4\",\n        \"senderId\": 1,\n        \"sentAt\": 1693817318232\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "get messages without inbox",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/message/without-index?userId=1&friendId=2&pageNo=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"message",
+						"without-index"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						},
+						{
+							"key": "friendId",
+							"value": "2"
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This api is used when user goes to contact screen to select the user and then message as in this case inboxId will be absent"
+			},
+			"response": [
+				{
+					"name": "get messages without inbox",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/message/without-index?userId=1&friendId=2&pageNo=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"message",
+								"without-index"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "friendId",
+									"value": "2"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "695"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi mohan1\",\n        \"senderId\": 2,\n        \"sentAt\": 1693759627042\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi mohan2\",\n        \"senderId\": 2,\n        \"sentAt\": 1693759715290\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 1\",\n        \"senderId\": 1,\n        \"sentAt\": 1693763225355\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 2\",\n        \"senderId\": 1,\n        \"sentAt\": 1693763235548\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 3\",\n        \"senderId\": 1,\n        \"sentAt\": 1693811839579\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi mohan2\",\n        \"senderId\": 2,\n        \"sentAt\": 1693813207795\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"Hi rohan\",\n        \"senderId\": 1,\n        \"sentAt\": 1693813282061\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 2\",\n        \"senderId\": 1,\n        \"sentAt\": 1693815415926\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"h rohan 3\",\n        \"senderId\": 1,\n        \"sentAt\": 1693817263807\n    },\n    {\n        \"inboxId\": 1,\n        \"text\": \"hi rohan 4\",\n        \"senderId\": 1,\n        \"sentAt\": 1693817318232\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "signup",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\": \"John Doe\",\r\n\t\"mobileNo\": \"1234567890\",\r\n\t\"password\": \"secretpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"signup"
+					]
+				},
+				"description": "This api is used for adding new user"
+			},
+			"response": [
+				{
+					"name": "signup",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"John Doe\",\r\n\t\"mobileNo\": \"1234567891\",\r\n\t\"password\": \"secretpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"mobileNo\": \"1234567891\",\r\n\t\"password\": \"secretpassword\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/signin",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"signin"
+					]
+				},
+				"description": "This api is used for authenticating users"
+			},
+			"response": [
+				{
+					"name": "signin",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"mobileNo\": \"1234567891\",\r\n\t\"password\": \"secretpassword\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/signin",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "405"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"user\": {\n        \"userId\": 7,\n        \"name\": \"John Doe\",\n        \"mobileNo\": \"1234567891\",\n        \"password\": \"a6685009158873df2173bda293e846cbaffbe389c93935577702eb9362850f12\",\n        \"salt\": \"a9e8dd614c96f793e1804f0fd9524c14474f9328c54bb8ccebe34321a1b5f996\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MjU4Nzc1MTcsInVzZXJJZCI6IjcifQ.0RtavO_wzvRH4sycbfnzr7cMr2jmyZ706uxyvOqkSMU\"\n}"
+				}
+			]
+		},
+		{
+			"name": "authenticate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1c2VycyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAiLCJleHAiOjE3MjQ0MjMyMDEsInVzZXJJZCI6IjEifQ._EiU7yAoShK8FsXjtlZRJtPMRr80Wcx8TrETvZxVAEk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/authenticate",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
