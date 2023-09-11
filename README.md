@@ -43,7 +43,7 @@ This is a chat application that has a frontend built with Jetpack Compose in And
  - For description of the api click on this icon in postman
    <img src="https://raw.githubusercontent.com/AnuragDevMastermind/Chat-application/main/Files/description.png">
  - Api for sending message
-   ![image](https://github.com/AnuragDevMastermind/Chat-application/assets/134276544/a27aa780-eb2d-465e-b0de-7edfbe2f1435)
+   ![image](https://raw.githubusercontent.com/AnuragDevMastermind/Chat-application/main/Files/message-api.png)
 
 ### Room for improvement
 
