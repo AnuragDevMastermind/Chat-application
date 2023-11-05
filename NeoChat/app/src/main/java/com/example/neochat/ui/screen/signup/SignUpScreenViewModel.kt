@@ -21,14 +21,14 @@ class SignUpScreenViewModel : ViewModel() {
         nameTxt.value = txt
     }
 
-    //----------------------------------------------------------------------------------------------
+    
     private val numberTxt = mutableStateOf("")
     fun getNumber() = numberTxt.value
     fun setNumber(number: String) {
         numberTxt.value = number
     }
 
-    //----------------------------------------------------------------------------------------------
+    
     private val passwordTxt = mutableStateOf("")
     fun getPassword() = passwordTxt.value
     fun setPassword(password: String) {
@@ -36,7 +36,7 @@ class SignUpScreenViewModel : ViewModel() {
     }
 
 
-    //----------------------------------------------------------------------------------------------
+    
     private val signUpRepository = SignUpRepository()
     val signUpApiState: MutableState<SignUpApiState> = mutableStateOf(SignUpApiState.Empty)
 

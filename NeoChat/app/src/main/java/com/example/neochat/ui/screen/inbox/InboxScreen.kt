@@ -35,6 +35,7 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -64,14 +65,15 @@ import java.util.Locale
 fun InboxScreen(
     navController: NavHostController,
     prefUserDetail: PrefUserDetail,
-    vmInbox: InboxViewModel
+    vmInbox: InboxViewModel,
+    userId: State<String?>
 ) {
     val scope = rememberCoroutineScope()
-    val context =  LocalContext.current
+    val context = LocalContext.current
     var expanded by remember { mutableStateOf(false) }
 
-    val userId = prefUserDetail.userId.collectAsState(initial = "")
-    LaunchedEffect(key1 = true){
+    //val userId = prefUserDetail.userId.collectAsState(initial = "")
+    LaunchedEffect(key1 = true) {
         vmInbox.initiateInbox(userId = userId.value!!.toInt())
     }
 
@@ -142,7 +144,10 @@ fun InboxScreen(
                         LazyColumn(modifier = Modifier) {
                             items(inboxList.inboxLst) {
                                 RowItem(
-                                    name = it.friendName,
+                                    name = when (userId.value?.toInt()) {
+                                        it.userId -> it.friendName
+                                        else -> it.userName
+                                    },
                                     onClick = {
                                         val inboxUserChatDetail = InboxUserChatDetail(
                                             inboxId = it.inboxId,
@@ -249,11 +254,16 @@ fun RowItemPreview() {
 @Composable
 fun InboxScreenPreview() {
     val context = LocalContext.current
+
     NeoChatTheme {
         InboxScreen(
             navController = rememberNavController(),
             prefUserDetail = PrefUserDetail(context = context),
-            vmInbox = viewModel()
+            vmInbox = viewModel(),
+            userId =  object : State<String?> {
+                override val value: String?
+                    get() = ""
+            }
         )
     }
 }

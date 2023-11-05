@@ -1,13 +1,14 @@
 # Neochat
 
 ## About
-This is a chat application that has a frontend built with Jetpack Compose in Android and a backend built with Ktor, which uses PostgreSQL as the database.
+This is a chat application that has a frontend built with Jetpack Compose for Android and React with typescript for web app and a backend built with Ktor, which uses PostgreSQL as the database.
 
 ## Table of Contents
 - [Bult using](#bult-using)
 - [Server setup prerequisite](#server-setup-prerequisite)
 - [Db structure](#db-structure)
 - [Api documentation](#api-documentation)
+- [React web app setup](#react-web-app-setup)
 - [Room for improvement](#room-for-improvement)
 - [Upcoming Features and Enhancements](#upcoming-features-and-enhancements)
 - [Current Demo](#current-demo)
@@ -22,7 +23,7 @@ This is a chat application that has a frontend built with Jetpack Compose in And
   - JWT 
   - Web socket
     
-* **Frontend**
+* **Frontend Android**
   - kotlin
   - Jetpack compose
   - Paging2 library
@@ -30,20 +31,47 @@ This is a chat application that has a frontend built with Jetpack Compose in And
   - Retrofit
   - Datastore Preference
 
+* **Frontend Web**
+  - Typescript
+  - React
+  - Vite
+  - CSS/ HTML
+  - Websocket
+
 ### Server setup prerequisite
  - Postgres must be installed with user and password as "postgres" and "postgres" respectively or change these in DatabaseFactory.kt
  - Create a table "neochat" in db or you can define your own in DatabaseFactory.kt
  - Add environment variable JWT_SECRET=anything in android studio
 
 ### Db structure
-<img src="https://raw.githubusercontent.com/AnuragDevMastermind/Chat-application/main/Files/neochat-db.png">
+<img  src="./Files/neochat-db.png">
 
 ### Api documentation
- - Import this collection in postman - [Collection](https://github.com/AnuragDevMastermind/Chat-application/blob/main/Files/neochat.json)
+ - Import this collection in postman - [Collection](./Files/neochat.json)
  - For description of the api click on this icon in postman
-   <img src="https://raw.githubusercontent.com/AnuragDevMastermind/Chat-application/main/Files/description.png">
+   <img src="./Files/description.png">
  - Api for sending message
-   ![image](https://raw.githubusercontent.com/AnuragDevMastermind/Chat-application/main/Files/message-api.png)
+   <img  src="./Files/message-api.png">
+
+### React web app setup
+- Node js must be installed
+- Clone the project with
+```
+https://github.com/AnuragDevMastermind/Chat-application.git
+```
+- Navigate to the directory
+```
+cd NeoChatWeb
+```
+- Install the dependencies with
+```
+npm i
+```
+- run with
+```
+npm run dev
+```
+
 
 ### Room for improvement
 
@@ -57,7 +85,7 @@ This is a chat application that has a frontend built with Jetpack Compose in And
  - Support for all type of media
  - User will be able to edit and delete the message
  - Compose Multiplatform for IOS app
- - Neochat Website using kotlin
 
 ### Current Demo
-<img src="https://raw.githubusercontent.com/AnuragDevMastermind/Chat-application/main/Files/Demo.gif">
+<img  src="./Files/Demo.gif" height="500">
+<img  src="./Files/react-web-app.gif" height="500">

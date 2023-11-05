@@ -10,7 +10,9 @@ import com.example.model.Messages.sentAt
 import com.example.model.Messages.text
 import io.ktor.server.plugins.*
 import org.jetbrains.exposed.sql.ResultRow
+import org.jetbrains.exposed.sql.SortOrder
 import org.jetbrains.exposed.sql.insert
+import org.jetbrains.exposed.sql.select
 import java.sql.ResultSet
 
 object MessageRepository {
@@ -73,6 +75,16 @@ object MessageRepository {
                 )
             )
         }
+    }
+
+    suspend fun getLatestMessageForInbox(inboxId: Long) = DatabaseFactory.dbQuery {
+        val result = Messages
+            .select() { Messages.inboxId eq inboxId }
+            .orderBy(Messages.sentAt, SortOrder.DESC)
+            .limit(1)
+            .singleOrNull()
+
+        result?.toMessage()
     }
 
     private fun ResultRow.toMessage() = Message(

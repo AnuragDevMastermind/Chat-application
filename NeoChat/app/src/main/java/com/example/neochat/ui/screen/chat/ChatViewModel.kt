@@ -60,7 +60,7 @@ class ChatViewModel: ViewModel() {
             .build()
     }
 
-    //----------------------------------------------------------------------------------------------
+    
 
     private val chatRepository = ChatRepository()
 
@@ -71,7 +71,7 @@ class ChatViewModel: ViewModel() {
     }.flow.cachedIn(viewModelScope)
 
 
-    //----------------------------------------------------------------------------------------------
+    
     private val messageResponseLst = mutableStateListOf<MessageItem>()
 
     fun getMessageResponseLst() = messageResponseLst
@@ -84,14 +84,14 @@ class ChatViewModel: ViewModel() {
         messageTxt.value = ""
     }
 
-    //----------------------------------------------------------------------------------------------
+    
 
     private val socketStatus = mutableStateOf(value = false)
     fun getConnectionStatus() = socketStatus.value
     fun setConnectionStatus(connectionStatus: Boolean) {
         this.socketStatus.value = connectionStatus
     }
-    //----------------------------------------------------------------------------------------------
+    
 
     private val messageTxt = mutableStateOf(value = "")
     fun getMessageTxt() = messageTxt.value
@@ -99,6 +99,6 @@ class ChatViewModel: ViewModel() {
         messageTxt.value = msgTxt
     }
 
-    //----------------------------------------------------------------------------------------------
+    
     fun getCurrentTimeStamp() = System.currentTimeMillis()
 }

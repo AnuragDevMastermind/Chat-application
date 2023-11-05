@@ -1,0 +1,376 @@
+.arrowBack1Icon {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.newChat {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+}
+.arrowBack1Parent,
+.contactbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.arrowBack1Parent {
+  flex: 1;
+  padding: 0 var(--padding-base);
+  gap: 26px;
+}
+.contactbar {
+  width: 414px;
+  height: 80px;
+  padding: var(--padding-5xl);
+  box-sizing: border-box;
+}
+.divider {
+  position: relative;
+  background-color: var(--black);
+  width: 349px;
+  height: 1px;
+  opacity: 0.08;
+}
+.header {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.imgIcon {
+  position: relative;
+  border-radius: var(--br-xs);
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.elmerLaverty {
+  flex: 1;
+  position: relative;
+  line-height: 150%;
+  font-weight: 500;
+}
+.available,
+.name {
+  align-self: stretch;
+}
+.name {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.available {
+  position: relative;
+  line-height: 150%;
+  font-weight: 500;
+  color: var(--color-gray);
+}
+.contact,
+.contactdetail {
+  align-self: stretch;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.contactdetail {
+  width: 292px;
+  flex-direction: column;
+}
+.contact {
+  overflow: hidden;
+  flex-direction: row;
+  padding: var(--padding-xs);
+  gap: var(--gap-base);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+}
+.m {
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+  font-family: var(--font-metropolis);
+  display: none;
+  opacity: 0.3;
+}
+.name3 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.atWork,
+.fullNameHere1 {
+  position: relative;
+  line-height: 150%;
+}
+.atWork {
+  align-self: stretch;
+  font-weight: 600;
+  color: var(--color-gray);
+}
+.fullNameHere1 {
+  flex: 1;
+}
+.contactlist {
+  align-self: stretch;
+  align-items: flex-start;
+  padding: 0 var(--padding-base);
+  gap: var(--gap-5xs);
+}
+.contactgloballist,
+.contactlist,
+.contactsidemenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.contactgloballist {
+  align-self: stretch;
+  align-items: flex-start;
+  padding: 0 1px;
+  font-size: var(--font-size-sm);
+  overflow-y: auto;
+}
+.contactsidemenu {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--white);
+  box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08);
+  width: 414px;
+  overflow: hidden;
+  align-items: center;
+  left: -100%;
+  transition: 850ms;
+}
+
+.contactsidemenu.active {
+  left: 0;
+  transition: 450ms;
+}
+
+.userContentChild {
+  position: relative;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.florencioDorrance {
+  position: relative;
+  line-height: 125%;
+  font-weight: 600;
+}
+.frameChild {
+  position: relative;
+  border-radius: 50%;
+  background-color: var(--green-green400);
+  width: 10px;
+  height: 10px;
+}
+.online {
+  position: relative;
+  line-height: 150%;
+  font-weight: 600;
+  opacity: 0.6;
+}
+.ellipseParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-5xs);
+  font-size: 12px;
+}
+.florencioDorranceParent,
+.userContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.userContent {
+  flex-direction: row;
+  gap: var(--gap-base);
+}
+.vectorIcon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+.close1,
+.panelHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.close1 {
+  overflow: hidden;
+  justify-content: flex-start;
+  padding: 5px;
+}
+.panelHeader {
+  align-self: stretch;
+  height: 80px;
+  justify-content: space-between;
+  padding: var(--padding-5xl);
+  box-sizing: border-box;
+}
+.divider1 {
+  align-self: stretch;
+  position: relative;
+  background-color: var(--black);
+  height: 1px;
+  opacity: 0.08;
+}
+.frameItem {
+  position: relative;
+  border-radius: 8.33px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.messageContentGoes {
+  position: relative;
+  line-height: 150%;
+}
+.frameGroup,
+.frameParent,
+.messageItem,
+.messageItemParent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.messageItem {
+  border-radius: var(--br-xs);
+  background-color: var(--color-forestgreen-100);
+  flex-direction: row;
+  padding: var(--padding-5xs) var(--padding-base);
+}
+.frameGroup,
+.frameParent,
+.messageItemParent {
+  flex-direction: column;
+  gap: var(--gap-3xs);
+}
+.frameGroup,
+.frameParent {
+  align-self: stretch;
+  flex-direction: row;
+  gap: var(--gap-base);
+}
+.frameGroup {
+  justify-content: flex-end;
+}
+.messageItemContainer,
+.messageList,
+.topContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.messageItemContainer {
+  align-items: flex-end;
+  gap: var(--gap-3xs);
+}
+.messageList,
+.topContent {
+  align-items: flex-start;
+}
+.messageList {
+  align-self: stretch;
+  padding: var(--padding-5xl);
+  gap: 32px;
+  font-size: var(--font-size-sm);
+  color: var(--white);
+}
+.topContent {
+  width: 854px;
+}
+.paperclip1Icon {
+  position: relative;
+  width: 18px;
+  height: 21px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.typeAMessage {
+  position: relative;
+  line-height: 150%;
+  opacity: 0.4;
+}
+.paperPlane1Icon {
+  position: relative;
+  width: 22px;
+  height: 21px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.messageBox,
+.typeAMessageParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+.typeAMessageParent {
+  flex: 1;
+  border-radius: var(--br-xs);
+  background-color: var(--white);
+  border: 2px solid var(--gray-gray300);
+  height: 48px;
+  overflow: hidden;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.messageBox {
+  width: 854px;
+  justify-content: flex-start;
+  padding: var(--padding-5xl);
+  gap: 24px;
+  font-size: var(--font-size-sm);
+}
+.messagesPanel {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: calc(50% - 220px);
+  background-color: rgba(12, 173, 61, 0.06);
+  width: 854px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-family: var(--font-metropolis);
+}
+.macbookAir4 {
+  position: relative;
+  background-color: var(--white);
+  width: 100%;
+  height: 832px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--black);
+  font-family: var(--font-radio-canada);
+}

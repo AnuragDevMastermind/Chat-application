@@ -13,7 +13,7 @@ import kotlinx.serialization.json.Json
 import org.apache.commons.codec.digest.DigestUtils
 
 object AuthController {
-    suspend fun signup(call: ApplicationCall) {
+    suspend fun signup(call: ApplicationCall, environment: ApplicationEnvironment) {
         val authSignUpRequest = call.receiveNullable<AuthSignUpRequest>() ?: run {
             call.respond(HttpStatusCode.BadRequest)
             return
@@ -26,12 +26,28 @@ object AuthController {
             return
         }
 
-        UserRepository.insertUser(
+        val user = UserRepository.insertUser(
             authSignUpRequest = authSignUpRequest,
             saltedHash = SHA256HashingService.generateSaltedHash(authSignUpRequest.password)
         )
 
-        call.respond(HttpStatusCode.OK)
+        val token = JwtTokenService.generate(
+            config = JwtTokenService.getTokenConfig(environment),
+            TokenClaim(
+                name = "userId",
+                value = user.userId.toString()
+            ),
+            TokenClaim(
+                name = "userName",
+                value = user.name
+            )
+        )
+
+        val signInResponse = SignInResponse(
+            user = user,
+            token = token
+        )
+        call.respond(Json.encodeToString(signInResponse))
     }
 
     suspend fun signIn(call: ApplicationCall, environment: ApplicationEnvironment) {
@@ -65,6 +81,10 @@ object AuthController {
             TokenClaim(
                 name = "userId",
                 value = user.userId.toString()
+            ),
+            TokenClaim(
+                name = "userName",
+                value = user.name
             )
         )
 

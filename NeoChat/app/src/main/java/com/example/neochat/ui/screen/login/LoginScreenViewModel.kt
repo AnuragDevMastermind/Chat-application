@@ -21,14 +21,14 @@ class LoginScreenViewModel: ViewModel() {
         nameTxt.value = txt
     }
 
-    //----------------------------------------------------------------------------------------------
+    
     private val passwordTxt = mutableStateOf("")
     fun getPassword() = passwordTxt.value
     fun setPassword(password: String){
         passwordTxt.value = password
     }
 
-    //----------------------------------------------------------------------------------------------
+    
     private val loginRepository = LoginRepository()
     val loginApiState : MutableState<LoginApiState> = mutableStateOf(LoginApiState.Empty)
 

@@ -1,6 +1,7 @@
 package com.example.neochat.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -28,6 +29,8 @@ fun SetUpNavGraph(
     navController: NavHostController,
     prefUserDetail: PrefUserDetail
 ) {
+
+    val userIdG = prefUserDetail.userId.collectAsState(initial = "")
     NavHost(navController = navController, startDestination = NavScreen.SplashScreen.route){
         composable(route = NavScreen.SplashScreen.route){
             val vmSplash = viewModel<SplashScreenViewModel>()
@@ -56,7 +59,8 @@ fun SetUpNavGraph(
             InboxScreen(
                 navController = navController,
                 prefUserDetail = prefUserDetail,
-                vmInbox = vmInbox
+                vmInbox = vmInbox,
+                userId = userIdG
             )
         }
         composable(route = NavScreen.ProfileScreen.route){
@@ -100,7 +104,9 @@ fun SetUpNavGraph(
             val vmChat = viewModel<ChatViewModel>()
             ChatScreen(
                 inboxUserChatDetail = inboxUserChatDetail,
-                vmChat = vmChat
+                vmChat = vmChat,
+                userId = userIdG
+
             )
         }
 

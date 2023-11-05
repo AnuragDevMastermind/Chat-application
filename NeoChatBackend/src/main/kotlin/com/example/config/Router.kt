@@ -49,13 +49,17 @@ fun Application.configureRouting() {
         post("/message") { MessageController.getMessages(call) }
         post("/message/without-index") { MessageController.getMessageWithoutIndex(call) }
         post("/signin") { AuthController.signIn(call, this@configureRouting.environment) }
-        post("/signup") { AuthController.signup(call) }
+        post("/signup") { AuthController.signup(call, this@configureRouting.environment) }
+        get("/message-web") { MessageController.getMessagesWeb(call) }
+        post("/message-web/without-index") { MessageController.getMessagesWebWithoutIndex(call) }
+        post("/inbox-web") { InboxController.getAllUserInboxWeb(call) }
         authenticate {
             get("authenticate") { call.respond(HttpStatusCode.OK) }
             get("secret") {
                 val principal = call.principal<JWTPrincipal>()
                 val userId = principal?.getClaim("userId", String::class)
-                call.respond(HttpStatusCode.OK, "Your userId is $userId")
+                val userName = principal?.getClaim("userName", String::class)
+                call.respond(HttpStatusCode.OK, "Your userId and userName is $userId, $userName")
             }
         }
     }

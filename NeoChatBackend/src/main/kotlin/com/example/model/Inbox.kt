@@ -12,6 +12,12 @@ data class Inbox(
     val friendName: String
 )
 
+@Serializable
+data class InboxWeb(
+    val inbox: Inbox,
+    val message: Message?
+)
+
 object Inboxes : Table("inbox") {
     val inboxId = long("inbox_id").autoIncrement()
     val userId = long("user_id")

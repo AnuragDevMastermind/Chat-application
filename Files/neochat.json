@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "085c82d6-60d1-47d4-945e-eec0663e6ece",
+		"_postman_id": "6af3dc97-8a10-4c1f-bfc7-860853b2f596",
 		"name": "neochat",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "23088325"
@@ -158,7 +158,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:8080/message?inboxId=1&pageNo=1",
+					"raw": "http://127.0.0.1:8080/message?inboxId=6&pageNo=5",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -173,11 +173,11 @@
 					"query": [
 						{
 							"key": "inboxId",
-							"value": "1"
+							"value": "6"
 						},
 						{
 							"key": "pageNo",
-							"value": "1"
+							"value": "5"
 						}
 					]
 				},
@@ -346,7 +346,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"name\": \"John Doe\",\r\n\t\"mobileNo\": \"1234567890\",\r\n\t\"password\": \"secretpassword\"\r\n}",
+					"raw": "{\r\n\t\"name\": \"Anurag Sagar\",\r\n\t\"mobileNo\": \"6204745168\",\r\n\t\"password\": \"secretpassword\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -413,7 +413,7 @@
 						}
 					],
 					"cookie": [],
-					"body": null
+					"body": ""
 				}
 			]
 		},
@@ -424,7 +424,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\t\"mobileNo\": \"1234567891\",\r\n\t\"password\": \"secretpassword\"\r\n}",
+					"raw": "{\r\n\t\"mobileNo\": \"6204745168\",\r\n\t\"password\": \"kJ*beLp.?62q9d\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -533,6 +533,265 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "get message web",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/message-web?inboxId=6&pageNo=1&userId=10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"message-web"
+					],
+					"query": [
+						{
+							"key": "inboxId",
+							"value": "6"
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						},
+						{
+							"key": "userId",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get message web",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/message-web?inboxId=6&pageNo=1&userId=10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"message-web"
+							],
+							"query": [
+								{
+									"key": "inboxId",
+									"value": "6"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "547"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=UTF-8"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"position\":\"L\",\"messages\":[{\"text\":\"hi\",\"sentAt\":1699167639279}]},{\"position\":\"R\",\"messages\":[{\"text\":\"Hi alex\",\"sentAt\":1699161590635},{\"text\":\"h\",\"sentAt\":1699161603403},{\"text\":\"helllo\",\"sentAt\":1699161642186},{\"text\":\"hi\",\"sentAt\":1699161662426},{\"text\":\"bye\",\"sentAt\":1699161664874}]},{\"position\":\"L\",\"messages\":[{\"text\":\"hello anurag\",\"sentAt\":1699156781418}]},{\"position\":\"R\",\"messages\":[{\"text\":\"bye\",\"sentAt\":1699112183444},{\"text\":\"hi hello\",\"sentAt\":1699131836906}]},{\"position\":\"L\",\"messages\":[{\"text\":\"hi\",\"sentAt\":1699112179444}]}]"
+				}
+			]
+		},
+		{
+			"name": "get all inbox web",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/inbox-web?userId=10",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"inbox-web"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get all inbox web",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/inbox-web?userId=10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"inbox-web"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "1378"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=UTF-8"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"inbox\":{\"inboxId\":6,\"userId\":10,\"friendId\":12,\"userName\":\"Anurag Sagar\",\"friendName\":\"Alex wang\"},\"message\":{\"inboxId\":6,\"text\":\"hi\",\"senderId\":12,\"sentAt\":1699167639279}},{\"inbox\":{\"inboxId\":9,\"userId\":14,\"friendId\":10,\"userName\":\"Elon\",\"friendName\":\"Anurag Sagar\"},\"message\":{\"inboxId\":9,\"text\":\"hi\",\"senderId\":10,\"sentAt\":1699167779868}},{\"inbox\":{\"inboxId\":14,\"userId\":10,\"friendId\":9,\"userName\":\"User1\",\"friendName\":\"Saurav\"},\"message\":{\"inboxId\":14,\"text\":\"Helllo\",\"senderId\":10,\"sentAt\":1699156646234}},{\"inbox\":{\"inboxId\":15,\"userId\":15,\"friendId\":10,\"userName\":\"User1\",\"friendName\":\"Anurag Sagar\"},\"message\":{\"inboxId\":15,\"text\":\"hello\",\"senderId\":15,\"sentAt\":1699183332406}},{\"inbox\":{\"inboxId\":16,\"userId\":16,\"friendId\":10,\"userName\":\"User1\",\"friendName\":\"Anurag Sagar\"},\"message\":{\"inboxId\":16,\"text\":\"hi\",\"senderId\":16,\"sentAt\":1699134848665}},{\"inbox\":{\"inboxId\":17,\"userId\":17,\"friendId\":10,\"userName\":\"Ramsi\",\"friendName\":\"Anurag Sagar\"},\"message\":{\"inboxId\":17,\"text\":\"nice\",\"senderId\":10,\"sentAt\":1699161651450}},{\"inbox\":{\"inboxId\":18,\"userId\":10,\"friendId\":8,\"userName\":\"Anurag Sagar\",\"friendName\":\"Rohan\"},\"message\":{\"inboxId\":18,\"text\":\"hi\",\"senderId\":10,\"sentAt\":1699163393995}},{\"inbox\":{\"inboxId\":19,\"userId\":10,\"friendId\":13,\"userName\":\"Anurag Sagar\",\"friendName\":\"John \"},\"message\":{\"inboxId\":19,\"text\":\"bye\",\"senderId\":10,\"sentAt\":1699163531131}}]"
+				}
+			]
+		},
+		{
+			"name": "get message web without index",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8080/message/without-index?userId=10&friendId=12&pageNo=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"message",
+						"without-index"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "10"
+						},
+						{
+							"key": "friendId",
+							"value": "12"
+						},
+						{
+							"key": "pageNo",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get message web without index",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/message-web/without-index?userId=10&friendId=12&pageNo=1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"message-web",
+								"without-index"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "10"
+								},
+								{
+									"key": "friendId",
+									"value": "12"
+								},
+								{
+									"key": "pageNo",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Length",
+							"value": "547"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain; charset=UTF-8"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"position\":\"L\",\"messages\":[{\"text\":\"hi\",\"sentAt\":1699167639279}]},{\"position\":\"R\",\"messages\":[{\"text\":\"Hi alex\",\"sentAt\":1699161590635},{\"text\":\"h\",\"sentAt\":1699161603403},{\"text\":\"helllo\",\"sentAt\":1699161642186},{\"text\":\"hi\",\"sentAt\":1699161662426},{\"text\":\"bye\",\"sentAt\":1699161664874}]},{\"position\":\"L\",\"messages\":[{\"text\":\"hello anurag\",\"sentAt\":1699156781418}]},{\"position\":\"R\",\"messages\":[{\"text\":\"bye\",\"sentAt\":1699112183444},{\"text\":\"hi hello\",\"sentAt\":1699131836906}]},{\"position\":\"L\",\"messages\":[{\"text\":\"hi\",\"sentAt\":1699112179444}]}]"
+				}
+			]
 		}
 	]
 }

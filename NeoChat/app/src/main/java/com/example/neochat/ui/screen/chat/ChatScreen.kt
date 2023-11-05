@@ -37,6 +37,7 @@ import androidx.compose.material3.surfaceColorAtElevation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -50,6 +51,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.items
+import com.example.neochat.preference.PrefUserDetail
 import com.example.neochat.ui.theme.NeoChatTheme
 import com.example.neochat.utils.time.TimeUtil
 import kotlinx.coroutines.CoroutineScope
@@ -59,7 +61,11 @@ import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChatScreen(inboxUserChatDetail: InboxUserChatDetail, vmChat: ChatViewModel) {
+fun ChatScreen(
+    inboxUserChatDetail: InboxUserChatDetail,
+    vmChat: ChatViewModel,
+    userId: State<String?>
+) {
 
     val context = LocalContext.current
     val lazyListState = rememberLazyListState()
@@ -80,7 +86,10 @@ fun ChatScreen(inboxUserChatDetail: InboxUserChatDetail, vmChat: ChatViewModel) 
                 TopAppBar(
                     title = {
                         Text(
-                            text = inboxUserChatDetail.friendName,
+                            text = when (userId.value?.toInt()) {
+                                inboxUserChatDetail.userId -> inboxUserChatDetail.friendName
+                                else -> inboxUserChatDetail.userName
+                            },
                             fontWeight = FontWeight.Medium,
                             color = MaterialTheme.colorScheme.secondary
                         )
@@ -114,7 +123,9 @@ fun ChatScreen(inboxUserChatDetail: InboxUserChatDetail, vmChat: ChatViewModel) 
             }
         ) { contentPadding ->
             LaunchedEffect(key1 = Unit){
-                vmChat.connectWebSocket(userId = inboxUserChatDetail.userId)
+                userId.value?.let {
+                    vmChat.connectWebSocket(userId = it.toInt())
+                }
             }
 
             Column(
@@ -441,6 +452,7 @@ fun ChatScreen(inboxUserChatDetail: InboxUserChatDetail, vmChat: ChatViewModel) 
 @Preview(device = "id:Nexus 5", showSystemUi = true, showBackground = true)
 @Composable
 fun ChatScreenPreview() {
+    val context = LocalContext.current
     NeoChatTheme {
         ChatScreen(
             inboxUserChatDetail = InboxUserChatDetail(
@@ -451,7 +463,11 @@ fun ChatScreenPreview() {
                 friendName = "",
                 userId = 0
             ),
-            vmChat = viewModel()
+            vmChat = viewModel(),
+            userId =  object : State<String?> {
+                override val value: String?
+                    get() = ""
+            }
         )
     }
 }
