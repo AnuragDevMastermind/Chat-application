@@ -87,5 +87,5 @@ npm run dev
  - Compose Multiplatform for IOS app
 
 ### Current Demo
-<img  src="./Files/Demo.gif" height="500">
-<img  src="./Files/react-web-app.gif" height="500">
+![Android Demo](./Files/Demo.gif)
+![React Web App Demo](./Files/react-web-app.gif)
