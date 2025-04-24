@@ -1,0 +1,7 @@
+{
+  "name": "@repo/datamodel",
+  "version": "0.0.0",
+  "exports":{
+    "./*": "./model/*.ts"
+  }
+}

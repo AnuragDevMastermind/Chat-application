@@ -1,0 +1,24 @@
+{
+  "name": "base-project",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.8",
+    "turbo": "latest"
+  },
+  "packageManager": "npm@10.8.0",
+  "workspaces": [
+    "apps/*",
+    "common/*"
+  ],
+  "dependencies": {
+    "cookie": "^0.6.0",
+    "socket.io": "^4.7.5",
+    "uuid": "^10.0.0"
+  }
+}

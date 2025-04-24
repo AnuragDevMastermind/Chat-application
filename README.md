@@ -1,67 +1,59 @@
-# Neochat
+# NeoChat
 
 ## About
-This is a chat application that has a frontend built with Jetpack Compose for Android and React with typescript for web app and a backend built with Ktor, which uses PostgreSQL as the database.
+- A real time one-to-one chat application that has a frontend build with React using typescript and backend build with express which used mongodb as the database.
+- It has online indicator feature to show whether user is online or not
 
 ## Table of Contents
-- [Bult using](#bult-using)
+- [Built using](#built-using)
 - [Server setup prerequisite](#server-setup-prerequisite)
 - [Db structure](#db-structure)
-- [Api documentation](#api-documentation)
-- [React web app setup](#react-web-app-setup)
+- [How to run project](#how-to-run-project)
 - [Room for improvement](#room-for-improvement)
 - [Upcoming Features and Enhancements](#upcoming-features-and-enhancements)
 - [Current Demo](#current-demo)
 
-### Bult using
+### Built using
 
 * **Backend**
-  - kotlin
-  - ktor 
-  - postgres
-  - Exposed Library
-  - JWT 
-  - Web socket
-    
-* **Frontend Android**
-  - kotlin
-  - Jetpack compose
-  - Paging2 library
-  - Okhttp3 library
-  - Retrofit
-  - Datastore Preference
+    - Typescript
+    - Express
+    - Mongodb
+    - Mongoose Library
+    - JWT
+    - Socket.io
+    - Bcrypt
+    - Turborepo
+
 
 * **Frontend Web**
-  - Typescript
-  - React
-  - Vite
-  - CSS/ HTML
-  - Websocket
+    - Typescript
+    - React
+    - Tailwind
+    - Shadcn
+    - Socket.io
+    - Axios
+    - Redux
+    - React Hook Form
 
 ### Server setup prerequisite
- - Postgres must be installed with user and password as "postgres" and "postgres" respectively or change these in DatabaseFactory.kt
- - Create a table "neochat" in db or you can define your own in DatabaseFactory.kt
- - Add environment variable JWT_SECRET=anything in android studio
+- Docker must be installed to run MongoDB as a container. Once Docker is installed, execute the following command to start the MongoDB container:
+```
+docker run -d -p 27018:27017 --name mongodb mongo
+```
 
 ### Db structure
-<img  src="./Files/neochat-db.png">
+<img  src="./Files/db.png">
 
-### Api documentation
- - Import this collection in postman - [Collection](./Files/neochat.json)
- - For description of the api click on this icon in postman
-   <img src="./Files/description.png">
- - Api for sending message
-   <img  src="./Files/message-api.png">
-
-### React web app setup
+### How to run project
 - Node js must be installed
 - Clone the project with
 ```
-https://github.com/AnuragDevMastermind/Chat-application.git
+https://github.com/AmanSagar0433/MessagingApp.git
 ```
 - Navigate to the directory
 ```
-cd NeoChatWeb
+cd Chat-application
 ```
 - Install the dependencies with
 ```
@@ -75,17 +67,15 @@ npm run dev
 
 ### Room for improvement
 
-* **Server side**
-  - Apis access should be denied without authentication
+* **Scaling backend**
 
-* **Frontend side**
-  - offline caching
- 
+
 ### Upcoming Features and Enhancements
- - Support for all type of media
- - User will be able to edit and delete the message
- - Compose Multiplatform for IOS app
+- Support for group chat
+- Support for black theme
+- User will be able to edit and delete the message
+- Video calling feature using WebRTC
 
 ### Current Demo
-![Android Demo](./Files/Demo.gif)
+![Login Demo](./Files/login.gif)
 ![React Web App Demo](./Files/react-web-app.gif)
