@@ -1,79 +1,29 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Login from "./pages/Login";
-import SignUp from "./pages/Signup";
-import { HOME_ENDPOINT } from "./constants/strings";
-import { LOGIN_ENDPOINT, SIGNUP_ENDPOINT } from "@repo/utils/endpoints";
-import { NavBar } from "./components/Navbar";
-import { CustomSnackBar } from "./components/CustomSnackbars";
-import { AuthRoute, ProtectedRoute } from "./components/Route";
-import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import SignupPage from "./pages/SignupPage";
+import { HOME_ENDPOINT, LOGIN_ENDPOINT, SIGNUP_ENDPOINT } from "@repo/utils/endpoints";
+import HomePage from "./pages/HomePage";
+import { AuthRoute, ProtectedRoute } from "./components/custom/Route";
 
 function App() {
   return (
-    <>
-      <Router>
-        <CustomSnackBar />
-        <Routes>
-          <Route element={<AuthRoute />}>
-            <Route
-              path={SIGNUP_ENDPOINT}
-              element={
-                <>
-                  <NavBar />
-                  <SignUp />
-                </>
-              }
-            />
-            <Route
-              path={LOGIN_ENDPOINT}
-              element={
-                <>
-                  <NavBar />
-                  <Login />
-                </>
-              }
-            />
+    <BrowserRouter>
+      <Routes>
+        <Route element={<AuthRoute />}>
+          <Route path={LOGIN_ENDPOINT} >
+            <Route index element={<LoginPage/>} />
           </Route>
-          <Route element={<ProtectedRoute />}>
-            <Route path={HOME_ENDPOINT} element={<Home />} />
-            <Route path={"*"} element={<Home />} />
+          <Route path={SIGNUP_ENDPOINT} >
+            <Route index element={<SignupPage/>} />
           </Route>
-        </Routes>
-      </Router>
-    </>
+        </Route>
+        <Route element={<ProtectedRoute />}>
+          <Route path={HOME_ENDPOINT} element={<HomePage />} />
+          <Route path={"*"} element={<HomePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-// function App() {
-//   return (
-//     <>
-//       <Router>
-//         <CustomSnackBar />
-//         <Routes>
-//           <Route
-//             path={SIGNUP_ENDPOINT}
-//             element={
-//               <>
-//                 <NavBar />
-//                 <SignUp />
-//               </>
-//             }
-//           />
-//           <Route
-//             path={LOGIN_ENDPOINT}
-//             element={
-//               <>
-//                 <NavBar />
-//                 <Login />
-//               </>
-//             }
-//           />
-//           <Route path={HOME_ENDPOINT} element={<Home />} />
-//           <Route path={"*"} element={<Home />} />
-//         </Routes>
-//       </Router>
-//     </>
-//   )
-// }
 
 export default App;

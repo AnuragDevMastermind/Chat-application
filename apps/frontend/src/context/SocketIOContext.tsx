@@ -1,5 +1,5 @@
 import { MessageRequest } from "@repo/datamodel/message";
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext, useState, JSX } from "react";
 import socketio from "socket.io-client";
 import { useAppSelector } from "../hooks/useRedux";
 

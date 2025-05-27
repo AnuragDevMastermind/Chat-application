@@ -72,7 +72,7 @@ npm run dev
 
 ### Upcoming Features and Enhancements
 - Support for group chat
-- Support for black theme
+- Emoji support for sending expressive messages
 - User will be able to edit and delete the message
 - Video calling feature using WebRTC
 

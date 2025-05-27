@@ -1,3 +1,4 @@
+export const HOME_ENDPOINT = "/";
 export const LOGIN_ENDPOINT = "/auth/login";
 export const LOGOUT_ENDPOINT = "/auth/logout";
 export const SIGNUP_ENDPOINT = "/auth/register";

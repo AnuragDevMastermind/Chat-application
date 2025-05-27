@@ -1,9 +1,70 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
-    --primary: 20 100% 50%;
-    --primary-foreground: 210 40% 98%;
-    --background: 27 100% 98%;   
+    --background: oklch(1 0 0);
+    --foreground-1: oklch(0.97 0.0013 286.38);
+    --foreground-2: oklch(0.92 0.004 286.32);
+    --primary: oklch(0.76 0.1265 174.03);
+    --txt-1: oklch(0 0 0);
+    --txt-2: oklch(0.68 0 0);
+    --border-1: oklch(0.92 0.004 286.32);
+    --border-2: oklch(0.55 0.0153 285.89);
+    --error: oklch(0.69 0.1998 23.98);
+    --radius: 0.625rem;
+}
+
+.dark {
+    --background: oklch(0.2 0.0016 197.03);
+    --foreground-1: oklch(0.3 0.0014 197.08);
+    --foreground-2: oklch(0.33 0.0028 197.02);
+    --primary: oklch(0.74 0.1221 173.84);
+    --txt-1: oklch(1 0 0);
+    --txt-2: oklch(0.55 0.0153 285.89);
+    --border-1: oklch(0.33 0.0028 197.02);
+    --border-2: oklch(0.55 0.0153 285.89);
+    --error: oklch(0.64 0.1904 24.26);
+}
+
+@theme {
+    --animate-indeterminate: indeterminate 4s ease-in-out infinite;
+    @keyframes indeterminate {
+        0% {
+            transform: translateX(-100%);
+        }
+        50% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(400%);
+        }
+    }
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground-1: var(--foreground-1);
+    --color-foreground-2: var(--foreground-2);
+    --color-primary: var(--primary);
+    --color-txt-1: var(--txt-1);
+    --color-txt-2: var(--txt-2);
+    --color-border-1: var(--border-1);
+    --color-border-2: var(--border-2);
+    --color-error: var(--error);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+    * {
+        @apply border-border-1 outline-primary/50;
+        
+    }
+    body {
+        @apply bg-background text-txt-1
+    }
 }

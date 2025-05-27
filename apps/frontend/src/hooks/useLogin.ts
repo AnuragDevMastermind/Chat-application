@@ -5,6 +5,7 @@ import { setUser } from "../store/slice/authSlice";
 import { getUserFromToken } from "../Utils/tokenUtils";
 import { UserResponse } from "@repo/datamodel/user";
 import { useSocketIO } from "../context/SocketIOContext";
+import { toast } from "./useToast";
 
 const useLogin = () => {
   const user = useAppSelector((state) => state.loginSlice).user;
