@@ -18,7 +18,6 @@ export const getPaginatedMessages = (
    { $sort: { timestamp: -1 } },
    { $skip: (page - 1) * size },
    { $limit: size },
-   { $sort: { timestamp: 1 } },
  ]
  return MessageModel.aggregate(aggregationPipeline).exec();
 }
